@@ -1,0 +1,321 @@
+{
+  "numeric_features": [
+    "biodegradation_time_days",
+    "adjusted_hb_ratio_formulation_mol",
+    "adjusted_hv_ratio_formulation_mol",
+    "t_biodeg",
+    "additive1_percentage_wt",
+    "additive2_percentage_wt",
+    "additive3_percentage_wt"
+  ],
+  "categorical_features": [
+    "biodegradation_condition",
+    "additives",
+    "degradation_environment",
+    "additive_type_1",
+    "additive_type_2",
+    "additive_type_3",
+    "sample_shape_morphology"
+  ],
+  "numeric_schema": {
+    "biodegradation_time_days": {
+      "minimum": 1.03847,
+      "median": 49.84777,
+      "maximum": 452.12392
+    },
+    "adjusted_hb_ratio_formulation_mol": {
+      "minimum": 23.76,
+      "median": 82.88,
+      "maximum": 98.5
+    },
+    "adjusted_hv_ratio_formulation_mol": {
+      "minimum": 1.43,
+      "median": 2.7,
+      "maximum": 10.8
+    },
+    "t_biodeg": {
+      "minimum": 23.0,
+      "median": 28.0,
+      "maximum": 58.0
+    },
+    "additive1_percentage_wt": {
+      "minimum": 0.0,
+      "median": 10.0,
+      "maximum": 30.0
+    },
+    "additive2_percentage_wt": {
+      "minimum": 0.0,
+      "median": 0.0,
+      "maximum": 70.0
+    },
+    "additive3_percentage_wt": {
+      "minimum": 0.0,
+      "median": 0.0,
+      "maximum": 20.0
+    }
+  },
+  "categorical_schema": {
+    "biodegradation_condition": [
+      "aerobic"
+    ],
+    "additives": [
+      "no",
+      "yes"
+    ],
+    "degradation_environment": [
+      "compost_organic_fertilizer",
+      "laboratory_mineral_media",
+      "marine_aquatic",
+      "soil"
+    ],
+    "additive_type_1": [
+      "filler",
+      "functional_additive",
+      "not_applicable",
+      "plasticizer"
+    ],
+    "additive_type_2": [
+      "blend_polymer",
+      "filler",
+      "not_applicable",
+      "nucleating_agent",
+      "reinforcement",
+      "stabilizer"
+    ],
+    "additive_type_3": [
+      "filler",
+      "not_applicable",
+      "reinforcement",
+      "stabilizer"
+    ],
+    "sample_shape_morphology": [
+      "films",
+      "matrix_composites",
+      "particles",
+      "pellets",
+      "sheets"
+    ]
+  },
+  "default_record": {
+    "biodegradation_time_days": 5.02901088509541,
+    "adjusted_hb_ratio_formulation_mol": 79.2,
+    "adjusted_hv_ratio_formulation_mol": 10.8,
+    "t_biodeg": 58.0,
+    "additive1_percentage_wt": 10.0,
+    "additive2_percentage_wt": 0.0,
+    "additive3_percentage_wt": 0.0,
+    "biodegradation_condition": "aerobic",
+    "additives": "yes",
+    "degradation_environment": "compost_organic_fertilizer",
+    "additive_type_1": "plasticizer",
+    "additive_type_2": "not_applicable",
+    "additive_type_3": "not_applicable",
+    "sample_shape_morphology": "films"
+  },
+  "parameters": {
+    "max_depth": 12,
+    "max_features": "sqrt",
+    "min_samples_leaf": 6
+  },
+  "uncertainty": {
+    "coverage": 0.9,
+    "represented_study_curve_radius": 56.179270980020384,
+    "cross_study_stress_radius": 69.31960830893516,
+    "represented_unit": "maximum absolute residual per held-out curve",
+    "cross_study_unit": "maximum absolute residual over all curves and times in each held-out study",
+    "interpretation": "Finite-sample empirical residual radii for the exact frozen configuration; the cross-study value is a descriptive stress result, not a prospective coverage guarantee."
+  },
+  "training_rows": 1031,
+  "training_curves": 40,
+  "training_studies": 11,
+  "training_curve_families": 36,
+  "training_data_version": "D3_endpoint_audited_mineralization",
+  "predictor_set": "F-pre",
+  "predictor_availability_rule": "Only variables expected to be knowable before a biodegradation experiment; source-curated degradation mechanism and PHA-degrading-microbe labels are excluded.",
+  "training_weighting": "equal study weight, then equal curve weight within study",
+  "configuration_rule": "Modal random-forest hyperparameter set across the 11 correctly nested Task C outer selections; exact fixed-configuration OOF sensitivity is retained.",
+  "validation_summary": {
+    "task_b_curve_grouped_nested_cv": {
+      "point_mae": 14.391394421118177,
+      "point_rmse": 20.39659449056908,
+      "point_r2": 0.6073551660141372,
+      "curve_macro_mae": 13.77650381337428,
+      "study_curve_macro_mae": 13.936099216758793,
+      "primary_mae_metric": "curve_macro_mae",
+      "primary_mae": 13.77650381337428,
+      "primary_mae_ci_lower": 10.81745946071648,
+      "primary_mae_ci_upper": 17.04467738216326
+    },
+    "task_c_leave_one_study_out": {
+      "point_mae": 26.446564381060465,
+      "point_rmse": 30.941377663711062,
+      "point_r2": 0.0964257249516624,
+      "curve_macro_mae": 25.50532944999549,
+      "study_curve_macro_mae": 26.556650215673145,
+      "primary_mae_metric": "study_curve_macro_mae",
+      "primary_mae": 26.556650215673145,
+      "primary_mae_ci_lower": 21.38745215124327,
+      "primary_mae_ci_upper": 31.921369457304667
+    }
+  },
+  "exact_configuration_validation_summary": {
+    "task_b_curve_grouped_nested_cv": {
+      "point_mae": 17.947476289874462,
+      "point_r2": 0.5247934195482775,
+      "curve_macro_mae": 17.350479886920265,
+      "study_curve_macro_mae": 17.76543896558385,
+      "primary_mae_metric": "curve_macro_mae",
+      "primary_mae": 17.35047988692026,
+      "primary_mae_ci_lower": 14.74884188193949,
+      "primary_mae_ci_upper": 20.107194430938133
+    },
+    "task_c_leave_one_study_out": {
+      "point_mae": 26.23007506947124,
+      "point_r2": 0.1073171408947405,
+      "curve_macro_mae": 24.935184793128062,
+      "study_curve_macro_mae": 26.05889295153928,
+      "primary_mae_metric": "study_curve_macro_mae",
+      "primary_mae": 26.05889295153928,
+      "primary_mae_ci_lower": 20.98590839747345,
+      "primary_mae_ci_upper": 31.43689613085552
+    }
+  },
+  "global_first_order_reference": {
+    "asymptote": 64.63057344845821,
+    "rate_per_day": 0.03503599887704129
+  },
+  "global_baseline_validation_summary": {
+    "task_b_curve_grouped_nested_cv": {
+      "point_mae": 24.63459418159823,
+      "point_r2": 0.186153335801296,
+      "curve_macro_mae": 22.2734387880105,
+      "study_curve_macro_mae": 23.47551163216948,
+      "primary_mae_metric": "curve_macro_mae",
+      "primary_mae": 22.2734387880105,
+      "primary_mae_ci_lower": 18.65271045714597,
+      "primary_mae_ci_upper": 26.03485533325143
+    },
+    "task_c_leave_one_study_out": {
+      "point_mae": 26.15777672079339,
+      "point_r2": 0.0743307420853107,
+      "curve_macro_mae": 23.60112742409872,
+      "study_curve_macro_mae": 24.87480790224597,
+      "primary_mae_metric": "study_curve_macro_mae",
+      "primary_mae": 24.87480790224597,
+      "primary_mae_ci_lower": 18.10053413765876,
+      "primary_mae_ci_upper": 32.70965841102981
+    }
+  },
+  "model_version": "3.0.0",
+  "data_sha256": "052e6229cb6d7b074aa022fdf2dbb3f4c0c1990f32f234eb21c43b5c1e124b38",
+  "software_versions": {
+    "numpy": "1.26.4",
+    "pandas": "2.1.4",
+    "scikit_learn": "1.7.2",
+    "joblib": "1.5.3"
+  },
+  "strict_random_forest_performance": [
+    {
+      "task": "task_b_curve_grouped_nested_cv",
+      "model": "random_forest_f_pre",
+      "rows": 1031,
+      "studies": 11,
+      "curves": 40,
+      "point_mae": 14.391394421118177,
+      "point_rmse": 20.39659449056908,
+      "point_r2": 0.6073551660141372,
+      "curve_macro_mae": 13.77650381337428,
+      "curve_macro_rmse": 15.629838724954013,
+      "curve_macro_r2": -0.013023393842606,
+      "study_macro_mae": 13.407626312099724,
+      "study_macro_rmse": 16.830195360055143,
+      "study_macro_r2": 0.3543081280250308,
+      "study_curve_macro_mae": 13.936099216758793,
+      "curve_macro_mae_ci_lower": 9.079073062244593,
+      "curve_macro_mae_ci_upper": 19.2074693210246,
+      "study_curve_macro_mae_ci_lower": 9.607255158119484,
+      "study_curve_macro_mae_ci_upper": 18.575763943991017,
+      "primary_mae_metric": "curve_macro_mae",
+      "primary_mae": 13.77650381337428,
+      "primary_mae_ci_lower": 10.81745946071648,
+      "primary_mae_ci_upper": 17.04467738216326
+    },
+    {
+      "task": "task_c_leave_one_study_out",
+      "model": "random_forest_f_pre",
+      "rows": 1031,
+      "studies": 11,
+      "curves": 40,
+      "point_mae": 26.446564381060465,
+      "point_rmse": 30.941377663711062,
+      "point_r2": 0.0964257249516624,
+      "curve_macro_mae": 25.50532944999549,
+      "curve_macro_rmse": 28.228286596520284,
+      "curve_macro_r2": -7.580985808419084,
+      "study_macro_mae": 26.40427684688909,
+      "study_macro_rmse": 29.61690208223143,
+      "study_macro_r2": -6.1877429507195,
+      "study_curve_macro_mae": 26.556650215673145,
+      "curve_macro_mae_ci_lower": 20.598835436105823,
+      "curve_macro_mae_ci_upper": 31.137973383670285,
+      "study_curve_macro_mae_ci_lower": 21.493030809263207,
+      "study_curve_macro_mae_ci_upper": 32.114763233240446,
+      "primary_mae_metric": "study_curve_macro_mae",
+      "primary_mae": 26.556650215673145,
+      "primary_mae_ci_lower": 21.38745215124327,
+      "primary_mae_ci_upper": 31.921369457304667
+    }
+  ],
+  "exact_frozen_configuration_performance": [
+    {
+      "task": "task_b_curve_grouped_nested_cv",
+      "model": "random_forest_f_pre_fixed",
+      "rows": 1031,
+      "studies": 11,
+      "curves": 40,
+      "point_mae": 17.947476289874462,
+      "point_rmse": 22.43876450790202,
+      "point_r2": 0.5247934195482775,
+      "curve_macro_mae": 17.350479886920265,
+      "curve_macro_rmse": 19.463556261513627,
+      "curve_macro_r2": -0.7935406894943353,
+      "study_macro_mae": 17.59873481790456,
+      "study_macro_rmse": 20.460765843469616,
+      "study_macro_r2": -0.1631658738047867,
+      "study_curve_macro_mae": 17.76543896558385,
+      "curve_macro_mae_ci_lower": 13.45717403953339,
+      "curve_macro_mae_ci_upper": 21.9105253836753,
+      "study_curve_macro_mae_ci_lower": 13.613891694465488,
+      "study_curve_macro_mae_ci_upper": 22.431417033261877,
+      "primary_mae_metric": "curve_macro_mae",
+      "primary_mae": 17.35047988692026,
+      "primary_mae_ci_lower": 14.74884188193949,
+      "primary_mae_ci_upper": 20.107194430938133
+    },
+    {
+      "task": "task_c_leave_one_study_out",
+      "model": "random_forest_f_pre_fixed",
+      "rows": 1031,
+      "studies": 11,
+      "curves": 40,
+      "point_mae": 26.23007506947124,
+      "point_rmse": 30.754333222091034,
+      "point_r2": 0.1073171408947405,
+      "curve_macro_mae": 24.935184793128062,
+      "curve_macro_rmse": 27.673860997611357,
+      "curve_macro_r2": -7.517434518261832,
+      "study_macro_mae": 26.06470218650799,
+      "study_macro_rmse": 29.28566823352901,
+      "study_macro_r2": -6.161621648832343,
+      "study_curve_macro_mae": 26.05889295153928,
+      "curve_macro_mae_ci_lower": 20.25171173034182,
+      "curve_macro_mae_ci_upper": 30.497370456282894,
+      "study_curve_macro_mae_ci_lower": 21.06855190276385,
+      "study_curve_macro_mae_ci_upper": 31.63345442613234,
+      "primary_mae_metric": "study_curve_macro_mae",
+      "primary_mae": 26.05889295153928,
+      "primary_mae_ci_lower": 20.98590839747345,
+      "primary_mae_ci_upper": 31.43689613085552
+    }
+  ]
+}
